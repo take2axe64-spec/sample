@@ -112,6 +112,11 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
+        <script>
+	if (window.devicePixelRatio > 1) {
+  	window.devicePixelRatio = 1; // iPhoneの拡大スケールをリセット
+	}
+	</script>
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
