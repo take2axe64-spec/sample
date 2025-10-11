@@ -113,9 +113,6 @@
       script.src = loaderUrl;
       script.onload = () => {
 
-	if (window.devicePixelRatio > 1) {
-  	window.devicePixelRatio = 1; // iPhoneの拡大スケールをリセット
-	}
 
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
